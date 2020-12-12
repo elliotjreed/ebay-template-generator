@@ -5,7 +5,6 @@ import { convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons/faSave";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import { template } from "../templates/tcs";
 import "./../assets/scss/App.scss";

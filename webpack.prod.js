@@ -18,7 +18,7 @@ const collectSafelist = () => {
   return {
     greedy: [
       /^rdw-/,
-      /^public-DraftStyleDefault/,
+      /^public-DraftStyleDefault-/,
       /^DraftEditor/,
       /^public-DraftEditor/,
     ],
