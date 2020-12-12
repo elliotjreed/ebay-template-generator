@@ -3,6 +3,7 @@ import { ChangeEvent, ReactElement, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import { template } from "../templates/tcs";
 import "./../assets/scss/App.scss";

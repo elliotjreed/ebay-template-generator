@@ -88,8 +88,8 @@ module.exports = merge(commonConfig, {
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, {
         nodir: true,
-        safelist: collectSafelist,
       }),
+      safelist: collectSafelist,
     }),
     new CopyPlugin({ patterns: [{ from: "./assets/static", to: "./" }] }),
     new WorkboxPlugin.GenerateSW({
