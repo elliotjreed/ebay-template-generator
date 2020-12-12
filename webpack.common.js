@@ -11,16 +11,16 @@ module.exports = {
       {
         exclude: /\.test.tsx?$/,
         test: /\.tsx?$/,
-        use: ["awesome-typescript-loader"]
+        use: ["awesome-typescript-loader"],
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      }
-    ]
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
   performance: {
-    hints: false
+    hints: false,
   },
   plugins: [
     new CheckerPlugin(),
@@ -29,13 +29,13 @@ module.exports = {
       minify: {
         collapseWhitespace: true,
         removeComments: true,
-        removeScriptTypeAttributes: true
+        removeScriptTypeAttributes: true,
       },
       template: "./index.html",
-      title: "eBay Template Generator"
-    })
+      title: "eBay Template Generator",
+    }),
   ],
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
-  }
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
 };

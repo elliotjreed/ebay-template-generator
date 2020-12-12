@@ -11,7 +11,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 const PATHS = {
-  src: join(__dirname, "src")
+  src: join(__dirname, "src"),
 };
 
 module.exports = merge(commonConfig, {
@@ -22,9 +22,9 @@ module.exports = merge(commonConfig, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
   },
   optimization: {
     minimize: true,
@@ -37,23 +37,25 @@ module.exports = merge(commonConfig, {
           chunks: "all",
           enforce: true,
           name: "styles",
-          test: /\.css$/
+          test: /\.css$/,
         },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           chunks: "all",
           name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
             return `npm.${packageName.replace("@", "")}`;
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   },
   output: {
     filename: "js/[name].[hash].min.js",
     path: resolve(__dirname, "./dist"),
-    publicPath: "/"
+    publicPath: "/",
   },
   plugins: [
     new WebpackPwaManifest({
@@ -63,27 +65,30 @@ module.exports = merge(commonConfig, {
       icons: [
         {
           sizes: [16, 32, 96, 128, 150, 180, 192, 256, 512, 1024],
-          src: resolve("src/assets/img/icon.png")
-        }
+          src: resolve("src/assets/img/icon.png"),
+        },
       ],
       inject: true,
       ios: true,
       name: "NAME",
       short_name: "SHORTNAME",
-      theme_color: "#fff"
+      theme_color: "#fff",
     }),
     new FaviconsWebpackPlugin("../src/assets/img/icon.png"),
     new MiniCssExtractPlugin({
       chunkFilename: "[id].[hash].css",
-      filename: "[name].[hash].css"
+      filename: "[name].[hash].css",
     }),
     new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+      paths: glob.sync(`${PATHS.src}/**/*`, {
+        nodir: true,
+        safelist: { standard: [/^rdw-/] },
+      }),
     }),
     new CopyPlugin({ patterns: [{ from: "./assets/static", to: "./" }] }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
-      skipWaiting: true
-    })
-  ]
+      skipWaiting: true,
+    }),
+  ],
 });

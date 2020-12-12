@@ -10,9 +10,9 @@ module.exports = merge(commonConfig, {
     open: true,
     port: 8085,
     publicPath: "/",
-    watchContentBase: true
+    watchContentBase: true,
   },
   devtool: "inline-source-map",
   mode: "development",
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 });
