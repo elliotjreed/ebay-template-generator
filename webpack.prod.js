@@ -16,7 +16,13 @@ const PATHS = {
 
 const collectSafelist = () => {
   return {
-    greedy: [/^rdw-/, /^public-DraftStyleDefault-/, /^DraftEditor-/],
+    greedy: [
+      /^rdw-/,
+      /^public-DraftStyleDefault-/,
+      /^DraftEditor/,
+      /^public-DraftEditor/,
+      "notranslate",
+    ],
   };
 };
 
