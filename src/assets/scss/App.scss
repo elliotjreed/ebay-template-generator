@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/helpers/visibility";
+@import "~bulma/sass/helpers/typography";
+@import "~bulma/sass/elements/container";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/components/navbar";
+@import "~bulma/sass/elements/title";
+@import "~bulma/sass/elements/content";
+@import "~bulma/sass/form/all";
+
+.main-content {
+  margin: 1em 1em 0;
+}
+
+.hero {
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}

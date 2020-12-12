@@ -1,0 +1,19 @@
+version: "3.6"
+
+services:
+  ebay-template-generator:
+    image: elliotjreed/ebay-template-generator
+    container_name: ebay-template-generator
+    restart: always
+    networks:
+      - web
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:ebay-template.elliotjreed.com"
+      - "traefik.protocol=h2c"
+      - "traefik.port=96"
+
+networks:
+  web:
+    external: true

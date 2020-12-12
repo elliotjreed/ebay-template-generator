@@ -1,0 +1,13 @@
+User-agent: Yandex
+Disallow: /
+
+User-agent: baiduspider
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-Agent: *
