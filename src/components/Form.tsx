@@ -5,7 +5,6 @@ import { convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 
 import { template } from "../templates/tcs";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./../assets/scss/App.scss";
 
 const Contact = (): ReactElement => {
