@@ -167,11 +167,15 @@ export const template = (title: string, description: string): string => {
     }
 
     #header-container {
-        background: #fff;
+      background: #fff;
     }
 
     #footer-container {
-      background: #fff79f;
+      background: #000;
+    }
+
+    #footer-container a, small {
+      color: #fff;
     }
 
     #title {
@@ -255,10 +259,6 @@ export const template = (title: string, description: string): string => {
 
       nav ul li {
         display: inline;
-      }
-
-      .oldie nav a {
-        margin: 0 .7%;
       }
     }
 
@@ -377,9 +377,9 @@ export const template = (title: string, description: string): string => {
       </section>
       <hr>
       <section id="Contact">
-        <h3>Contact Me</h3>
+        <h3>Contact</h3>
         <p>
-          The easiest way to contact me is <a href="http://contact.ebay.co.uk/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=childrenssocietylevenshulme" target="_blank">using eBay&apos;s &quot;Contact Seller&quot;</a>.
+          The easiest way to contact us is <a href="http://contact.ebay.co.uk/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=childrenssocietylevenshulme" target="_blank">using eBay&apos;s &quot;Contact Seller&quot;</a>.
         </p>
       </section>
       <hr>
