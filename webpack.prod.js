@@ -14,6 +14,12 @@ const PATHS = {
   src: join(__dirname, "src"),
 };
 
+const collectSafelist = () => {
+  return {
+    standard: [/^rdw-/],
+  };
+};
+
 module.exports = merge(commonConfig, {
   devtool: "source-map",
   entry: "./index.tsx",
@@ -82,7 +88,7 @@ module.exports = merge(commonConfig, {
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, {
         nodir: true,
-        safelist: { deep: [/^rdw-/] },
+        safelist: collectSafelist,
       }),
     }),
     new CopyPlugin({ patterns: [{ from: "./assets/static", to: "./" }] }),
