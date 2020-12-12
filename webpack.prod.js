@@ -16,7 +16,7 @@ const PATHS = {
 
 const collectSafelist = () => {
   return {
-    standard: [/^rdw-/, /^public-DraftStyleDefault-/],
+    standard: [/^rdw-/, /^public-DraftStyleDefault-/, /^DraftEditor-/],
   };
 };
 
