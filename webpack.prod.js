@@ -21,7 +21,6 @@ const collectSafelist = () => {
       /^public-DraftStyleDefault-/,
       /^DraftEditor/,
       /^public-DraftEditor/,
-      "notranslate",
     ],
   };
 };
