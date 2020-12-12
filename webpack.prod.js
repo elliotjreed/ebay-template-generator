@@ -61,7 +61,7 @@ module.exports = merge(commonConfig, {
     new WebpackPwaManifest({
       background_color: "#fff",
       crossorigin: "use-credentials",
-      description: "DESCRIPTION",
+      description: "An eBay HTML listing generator mini web app",
       icons: [
         {
           sizes: [16, 32, 96, 128, 150, 180, 192, 256, 512, 1024],
@@ -70,8 +70,8 @@ module.exports = merge(commonConfig, {
       ],
       inject: true,
       ios: true,
-      name: "NAME",
-      short_name: "SHORTNAME",
+      name: "eBay Listing Generator",
+      short_name: "Listing Generator",
       theme_color: "#fff",
     }),
     new FaviconsWebpackPlugin("../src/assets/img/icon.png"),
@@ -82,7 +82,7 @@ module.exports = merge(commonConfig, {
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, {
         nodir: true,
-        safelist: { standard: [/^rdw-/] },
+        safelist: { deep: [/^rdw-/] },
       }),
     }),
     new CopyPlugin({ patterns: [{ from: "./assets/static", to: "./" }] }),
