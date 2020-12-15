@@ -5,9 +5,7 @@ export const template = (title: string, description: string): string => {
 <head>
   <meta charset="utf-8">
   <title>${title}</title>
-  <!--[if IE ]>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <![endif]-->
+  <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     article, aside, details, figcaption, figure, footer, header, nav, section {
@@ -379,7 +377,7 @@ export const template = (title: string, description: string): string => {
       <section id="Contact">
         <h3>Contact</h3>
         <p>
-          The easiest way to contact us is <a href="http://contact.ebay.co.uk/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=childrenssocietylevenshulme" target="_blank">using eBay&apos;s &quot;Contact Seller&quot;</a>.
+          For any questions or general enquiries please contact us <a href="http://contact.ebay.co.uk/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=childrenssocietylevenshulme" target="_blank">using eBay&apos;s &quot;Contact Seller&quot;</a>.
         </p>
       </section>
       <hr>
