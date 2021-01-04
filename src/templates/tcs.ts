@@ -1,346 +1,337 @@
 export const template = (title: string, description: string): string => {
   return `
-<!doctype html>
-<html lang="en-GB" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>${title}</title>
-  <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    article, aside, details, figcaption, figure, footer, header, nav, section {
-      display: block;
+<style>
+  article, aside, details, figcaption, figure, footer, header, nav, section {
+    display: block;
+  }
+
+  html {
+    font-size: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    line-height: 1.231;
+  }
+
+  body, button, input, select, textarea {
+    font-family: sans-serif;
+    color: #222;
+  }
+
+  a {
+    color: #136C91;
+    text-decoration: none;
+  }
+
+  a:hover, a:visited {
+    color: #136C91;
+  }
+
+  a:focus {
+    outline: thin dotted;
+  }
+
+  a:active, a:hover {
+    outline: 0;
+  }
+
+  abbr {
+    border-bottom: 1px dotted;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  blockquote {
+    margin: 1em 40px;
+    font-style: italic;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+  }
+
+  pre {
+    white-space: pre;
+    word-wrap: break-word;
+  }
+
+  q {
+    quotes: none;
+  }
+
+  q:after, q:before {
+    content: "";
+  }
+
+  small {
+    font-size: 85%;
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -.5em;
+  }
+
+  sub {
+    bottom: -.25em;
+  }
+
+  ol, ul {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+  }
+
+  nav ol, nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    padding: 10px 0;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  small {
+    color: #000;
+    text-decoration: none;
+  }
+
+  body {
+    font: 16px/24px Helvetica, Helvetica Neue, Arial, sans-serif;
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  #header-container {
+    border-bottom: 20px solid #ffeb00;
+  }
+
+  #footer-container {
+    border-top: 20px solid #ffeb00;
+  }
+
+  #header-container {
+    background: #fff;
+  }
+
+  #footer-container {
+    background: #000;
+  }
+
+  #footer-container a, small {
+    color: #fff;
+  }
+
+  #title {
+    margin: 0;
+    color: #000;
+    text-align: center;
+  }
+
+  ::-moz-selection {
+    background: #ffeb00;
+    color: #000;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: #ffeb00;
+    color: #000;
+    text-shadow: none;
+  }
+
+  nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    background: #ffeb00;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  nav a:hover, nav a:visited {
+    color: #000;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  #main {
+    padding: 30px 0;
+  }
+
+  #main article h1 {
+    font-size: 2em;
+  }
+
+  #footer-container footer {
+    color: #fff;
+    padding: 20px 0;
+  }
+
+  .clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+  .clearfix {
+    zoom: 1;
+  }
+
+  @media only screen and (min-width: 480px) {
+    nav a {
+      float: left;
+      width: 27%;
+      margin: 0 1.7%;
+      padding: 25px 2%;
     }
 
-    html {
-      font-size: 100%;
-      overflow-y: scroll;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+    nav li:first-child a {
+      margin-left: 0;
     }
 
-    body {
-      margin: 0;
-      line-height: 1.231;
+    nav li:last-child a {
+      margin-right: 0;
     }
 
-    body, button, input, select, textarea {
-      font-family: sans-serif;
-      color: #222;
+    nav ul li {
+      display: inline;
     }
+  }
 
-    a {
-      color: #136C91;
-      text-decoration: none;
-    }
-
-    a:hover, a:visited {
-      color: #136C91;
-    }
-
-    a:focus {
-      outline: thin dotted;
-    }
-
-    a:active, a:hover {
-      outline: 0;
-    }
-
-    abbr {
-      border-bottom: 1px dotted;
-    }
-
-    strong {
-      font-weight: 700;
-    }
-
-    blockquote {
-      margin: 1em 40px;
-      font-style: italic;
-    }
-
-    hr {
-      display: block;
-      height: 1px;
-      border: 0;
-      border-top: 1px solid #ccc;
-      margin: 1em 0;
-      padding: 0;
-    }
-
-    code, kbd, pre, samp {
-      font-family: monospace, monospace;
-      _font-family: 'courier new', monospace;
-      font-size: 1em;
-    }
-
-    pre {
-      white-space: pre;
-      word-wrap: break-word;
-    }
-
-    q {
-      quotes: none;
-    }
-
-    q:after, q:before {
-      content: "";
-    }
-
-    small {
-      font-size: 85%;
-    }
-
-    sub, sup {
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-      vertical-align: baseline;
-    }
-
-    sup {
-      top: -.5em;
-    }
-
-    sub {
-      bottom: -.25em;
-    }
-
-    ol, ul {
-      margin: 1em 0;
-      padding: 0 0 0 40px;
-    }
-
-    nav ol, nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    img {
-      padding: 10px 0;
-      border: 0;
-      -ms-interpolation-mode: bicubic;
-      vertical-align: middle;
-      max-width: 100%;
-    }
-
-    figure {
-      margin: 0;
-    }
-
-    figcaption {
-      text-align: center;
-    }
-
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-
-    td {
-      vertical-align: top;
-    }
-
-    small {
-      color: #000;
-      text-decoration: none;
-    }
-
-    body {
-      font: 16px/24px Helvetica, Helvetica Neue, Arial, sans-serif;
-    }
-
-    .wrapper {
-      width: 90%;
-      margin: 0 5%;
-    }
-
+  @media only screen and (min-width: 768px) {
     #header-container {
-      border-bottom: 20px solid #ffeb00;
-    }
-
-    #footer-container {
-      border-top: 20px solid #ffeb00;
-    }
-
-    #header-container {
-      background: #fff;
-    }
-
-    #footer-container {
-      background: #000;
-    }
-
-    #footer-container a, small {
-      color: #fff;
+      -webkit-box-shadow: 0 5px 10px #aaa;
+      -moz-box-shadow: 0 5px 10px #aaa;
+      box-shadow: 0 5px 10px #aaa;
     }
 
     #title {
-      margin: 0;
-      color: #000;
-      text-align: center;
+      float: left;
     }
 
-    ::-moz-selection {
-      background: #ffeb00;
-      color: #000;
-      text-shadow: none;
+    nav {
+      float: right;
+      width: 38%;
     }
 
-    ::selection {
-      background: #ffeb00;
-      color: #000;
-      text-shadow: none;
+    #main article {
+      float: left;
+    }
+  }
+
+  @media only screen and (min-width: 1140px) {
+    .wrapper {
+      width: 1026px;
+      margin: 0 auto;
+    }
+  }
+
+  @media print {
+    * {
+      background: transparent !important;
+      color: #000 !important;
+      text-shadow: none !important;
+      filter: none !important;
+      -ms-filter: none !important;
     }
 
-    nav a {
-      display: block;
-      margin-bottom: 10px;
-      padding: 15px 0;
-      background: #ffeb00;
-      color: #000;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    nav a:hover, nav a:visited {
-      color: #000;
-    }
-
-    nav a:hover {
+    a, a:visited {
       text-decoration: underline;
     }
 
-    #main {
-      padding: 30px 0;
+    a[href]:after {
+      content: " (" attr(href) ")";
     }
 
-    #main article h1 {
-      font-size: 2em;
+    abbr[title]:after {
+      content: " (" attr(title) ")";
     }
 
-    #footer-container footer {
-      color: #fff;
-      padding: 20px 0;
+    blockquote, pre {
+      border: 1px solid #999;
+      page-break-inside: avoid;
     }
 
-    .clearfix:after, .clearfix:before {
-      content: "";
-      display: table;
+    thead {
+      display: table-header-group;
     }
 
-    .clearfix:after {
-      clear: both;
+    img, tr {
+      page-break-inside: avoid;
     }
 
-    .clearfix {
-      zoom: 1;
+    img {
+      max-width: 100%;
     }
 
-    @media only screen and (min-width: 480px) {
-      nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-      }
-
-      nav li:first-child a {
-        margin-left: 0;
-      }
-
-      nav li:last-child a {
-        margin-right: 0;
-      }
-
-      nav ul li {
-        display: inline;
-      }
+    @page {
+      margin: .5cm;
     }
 
-    @media only screen and (min-width: 768px) {
-      #header-container {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-        -moz-box-shadow: 0 5px 10px #aaa;
-        box-shadow: 0 5px 10px #aaa;
-      }
-
-      #title {
-        float: left;
-      }
-
-      nav {
-        float: right;
-        width: 38%;
-      }
-
-      #main article {
-        float: left;
-      }
+    h2, h3, p {
+      orphans: 3;
+      widows: 3;
     }
 
-    @media only screen and (min-width: 1140px) {
-      .wrapper {
-        width: 1026px;
-        margin: 0 auto;
-      }
+    h2, h3 {
+      page-break-after: avoid;
     }
-
-    @media print {
-      * {
-        background: transparent !important;
-        color: #000 !important;
-        text-shadow: none !important;
-        filter: none !important;
-        -ms-filter: none !important;
-      }
-
-      a, a:visited {
-        text-decoration: underline;
-      }
-
-      a[href]:after {
-        content: " (" attr(href) ")";
-      }
-
-      abbr[title]:after {
-        content: " (" attr(title) ")";
-      }
-
-      blockquote, pre {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-      }
-
-      thead {
-        display: table-header-group;
-      }
-
-      img, tr {
-        page-break-inside: avoid;
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      @page {
-        margin: .5cm;
-      }
-
-      h2, h3, p {
-        orphans: 3;
-        widows: 3;
-      }
-
-      h2, h3 {
-        page-break-after: avoid;
-      }
-    }</style>
-</head>
-<body>
+  }</style>
 
 <div id="header-container">
   <header class="wrapper clearfix" role="banner">
@@ -418,7 +409,5 @@ export const template = (title: string, description: string): string => {
     <small>&copy; <a href="https://www.childrenssociety.org.uk/" rel="noreferrer noopener" target="_blank"> The Children&apos;s Society</a></small>
   </footer>
 </div>
-</body>
-</html>
 `;
 };
