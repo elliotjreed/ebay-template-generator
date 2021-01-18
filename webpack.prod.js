@@ -1,7 +1,6 @@
 const { resolve, join } = require("path");
 const { merge } = require("webpack-merge");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const glob = require("glob");
 const commonConfig = require("./webpack.common");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -85,7 +84,6 @@ module.exports = merge(commonConfig, {
       short_name: "Listing Generator",
       theme_color: "#fff",
     }),
-    new FaviconsWebpackPlugin("../src/assets/img/icon.png"),
     new MiniCssExtractPlugin({
       chunkFilename: "[id].[hash].css",
       filename: "[name].[hash].css",
